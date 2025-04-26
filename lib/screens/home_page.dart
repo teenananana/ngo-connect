@@ -5,7 +5,8 @@ import 'opportunities_page.dart';
 import 'rewards_page.dart';
 import 'track_hours_page.dart';
 import 'login_page.dart';
-import '../services/auth_service.dart'; // updated path
+import 'profile_page.dart'; // Added import
+import '../services/auth_service.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -21,6 +22,16 @@ class HomePage extends StatelessWidget {
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
         actions: [
+          IconButton(
+            icon: const Icon(Icons.person, color: Colors.white),
+            tooltip: 'Profile',
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const ProfilePage()),
+              );
+            },
+          ),
           IconButton(
             icon: const Icon(Icons.logout, color: Colors.white),
             tooltip: 'Logout',
